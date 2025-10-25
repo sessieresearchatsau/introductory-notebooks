@@ -1,0 +1,5361 @@
+(************** Content-type: application/mathematica **************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     51329,       5213]*)
+(*NotebookOutlinePosition[     52189,       5244]*)
+(*  CellTagsIndexPosition[     52145,       5240]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+
+Cell[CellGroupData[{Cell["Point Plots and Space Curves", "Title",
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+by Theo Gray
+\
+\>", "Subsubtitle",
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[TextData[{
+  "This notebook defines the functions ",
+  StyleBox["PointPlot",
+    FontWeight->"Bold"],
+  ", ",
+  StyleBox["PointPlot3D",
+    FontWeight->"Bold"],
+  ", ",
+  StyleBox["PointParamPlot3D",
+    FontWeight->"Bold"],
+  ", ",
+  StyleBox["SpaceCurve",
+    FontWeight->"Bold"],
+  ", and ",
+  StyleBox["PointSpaceCurve",
+    FontWeight->"Bold"],
+  ".  These functions let you make discrete point plots in two and three \
+dimensions.  The SpaceCurve and PointSpaceCurve functions let you make \
+three-dimensional functions of one parameter (lines or points in 3D)."
+}], "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell["Examples", "Section",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[TextData[{
+  "Each of the functions defined in this notebook is a variation of either ",
+  StyleBox["Plot",
+    FontSize->10,
+    FontWeight->"Bold"],
+  ", ",
+  StyleBox["Plot3D",
+    FontSize->10,
+    FontWeight->"Bold"],
+  ", or ",
+  StyleBox["ParametricPlot3D",
+    FontSize->10,
+    FontWeight->"Bold"],
+  ".  The arguments are quite similar to these standard functions.  \n\
+Following are descriptions of each of the functions."
+}], "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell[TextData[{
+  "PointPlot",
+  StyleBox["",
+    FontFamily->"Geneva"]
+}], "Subsection",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[TextData[{
+  "PointPlot[ f, {x, min, max, (step)}] produces a plot of f(x) ",
+  StyleBox["vs.",
+    FontSlant->"Italic"],
+  " x.  Here is an example:"
+}], "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell["\<\
+PointPlot[Sin[x], {x, 0, 2 Pi, 0.2}]\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .61803 
+MathPictureStart
+%% Graphics
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.0238095 0.15361 0.308514 0.29493 [
+[(1)] .17742 .30851 0 2 Msboxa
+[(2)] .33103 .30851 0 2 Msboxa
+[(3)] .48464 .30851 0 2 Msboxa
+[(4)] .63825 .30851 0 2 Msboxa
+[(5)] .79186 .30851 0 2 Msboxa
+[(6)] .94547 .30851 0 2 Msboxa
+[(-1)] .01131 .01358 1 0 Msboxa
+[(-0.5)] .01131 .16105 1 0 Msboxa
+[(0.5)] .01131 .45598 1 0 Msboxa
+[(1)] .01131 .60344 1 0 Msboxa
+[ -0.001 -0.001 0 0 ]
+[ 1.001 .61903 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+[ ] 0 setdash
+0 g
+p
+p
+.002 w
+.17742 .30851 m
+.17742 .31476 L
+s
+P
+[(1)] .17742 .30851 0 2 Mshowa
+p
+.002 w
+.33103 .30851 m
+.33103 .31476 L
+s
+P
+[(2)] .33103 .30851 0 2 Mshowa
+p
+.002 w
+.48464 .30851 m
+.48464 .31476 L
+s
+P
+[(3)] .48464 .30851 0 2 Mshowa
+p
+.002 w
+.63825 .30851 m
+.63825 .31476 L
+s
+P
+[(4)] .63825 .30851 0 2 Mshowa
+p
+.002 w
+.79186 .30851 m
+.79186 .31476 L
+s
+P
+[(5)] .79186 .30851 0 2 Mshowa
+p
+.002 w
+.94547 .30851 m
+.94547 .31476 L
+s
+P
+[(6)] .94547 .30851 0 2 Mshowa
+p
+.001 w
+.05453 .30851 m
+.05453 .31226 L
+s
+P
+p
+.001 w
+.08525 .30851 m
+.08525 .31226 L
+s
+P
+p
+.001 w
+.11598 .30851 m
+.11598 .31226 L
+s
+P
+p
+.001 w
+.1467 .30851 m
+.1467 .31226 L
+s
+P
+p
+.001 w
+.20814 .30851 m
+.20814 .31226 L
+s
+P
+p
+.001 w
+.23886 .30851 m
+.23886 .31226 L
+s
+P
+p
+.001 w
+.26959 .30851 m
+.26959 .31226 L
+s
+P
+p
+.001 w
+.30031 .30851 m
+.30031 .31226 L
+s
+P
+p
+.001 w
+.36175 .30851 m
+.36175 .31226 L
+s
+P
+p
+.001 w
+.39247 .30851 m
+.39247 .31226 L
+s
+P
+p
+.001 w
+.4232 .30851 m
+.4232 .31226 L
+s
+P
+p
+.001 w
+.45392 .30851 m
+.45392 .31226 L
+s
+P
+p
+.001 w
+.51536 .30851 m
+.51536 .31226 L
+s
+P
+p
+.001 w
+.54608 .30851 m
+.54608 .31226 L
+s
+P
+p
+.001 w
+.5768 .30851 m
+.5768 .31226 L
+s
+P
+p
+.001 w
+.60753 .30851 m
+.60753 .31226 L
+s
+P
+p
+.001 w
+.66897 .30851 m
+.66897 .31226 L
+s
+P
+p
+.001 w
+.69969 .30851 m
+.69969 .31226 L
+s
+P
+p
+.001 w
+.73041 .30851 m
+.73041 .31226 L
+s
+P
+p
+.001 w
+.76114 .30851 m
+.76114 .31226 L
+s
+P
+p
+.001 w
+.82258 .30851 m
+.82258 .31226 L
+s
+P
+p
+.001 w
+.8533 .30851 m
+.8533 .31226 L
+s
+P
+p
+.001 w
+.88402 .30851 m
+.88402 .31226 L
+s
+P
+p
+.001 w
+.91475 .30851 m
+.91475 .31226 L
+s
+P
+p
+.001 w
+.97619 .30851 m
+.97619 .31226 L
+s
+P
+p
+.002 w
+0 .30851 m
+1 .30851 L
+s
+P
+p
+.002 w
+.02381 .01358 m
+.03006 .01358 L
+s
+P
+[(-1)] .01131 .01358 1 0 Mshowa
+p
+.002 w
+.02381 .16105 m
+.03006 .16105 L
+s
+P
+[(-0.5)] .01131 .16105 1 0 Mshowa
+p
+.002 w
+.02381 .45598 m
+.03006 .45598 L
+s
+P
+[(0.5)] .01131 .45598 1 0 Mshowa
+p
+.002 w
+.02381 .60344 m
+.03006 .60344 L
+s
+P
+[(1)] .01131 .60344 1 0 Mshowa
+p
+.001 w
+.02381 .04308 m
+.02756 .04308 L
+s
+P
+p
+.001 w
+.02381 .07257 m
+.02756 .07257 L
+s
+P
+p
+.001 w
+.02381 .10206 m
+.02756 .10206 L
+s
+P
+p
+.001 w
+.02381 .13156 m
+.02756 .13156 L
+s
+P
+p
+.001 w
+.02381 .19054 m
+.02756 .19054 L
+s
+P
+p
+.001 w
+.02381 .22004 m
+.02756 .22004 L
+s
+P
+p
+.001 w
+.02381 .24953 m
+.02756 .24953 L
+s
+P
+p
+.001 w
+.02381 .27902 m
+.02756 .27902 L
+s
+P
+p
+.001 w
+.02381 .33801 m
+.02756 .33801 L
+s
+P
+p
+.001 w
+.02381 .3675 m
+.02756 .3675 L
+s
+P
+p
+.001 w
+.02381 .39699 m
+.02756 .39699 L
+s
+P
+p
+.001 w
+.02381 .42649 m
+.02756 .42649 L
+s
+P
+p
+.001 w
+.02381 .48547 m
+.02756 .48547 L
+s
+P
+p
+.001 w
+.02381 .51497 m
+.02756 .51497 L
+s
+P
+p
+.001 w
+.02381 .54446 m
+.02756 .54446 L
+s
+P
+p
+.001 w
+.02381 .57395 m
+.02756 .57395 L
+s
+P
+p
+.002 w
+.02381 0 m
+.02381 .61803 L
+s
+P
+P
+0 0 m
+1 0 L
+1 .61803 L
+0 .61803 L
+closepath
+clip
+newpath
+p
+.008 w
+.02381 .30851 Mdot
+.05453 .36711 Mdot
+.08525 .42337 Mdot
+.11598 .47504 Mdot
+.1467 .52008 Mdot
+.17742 .55669 Mdot
+.20814 .5834 Mdot
+.23886 .59915 Mdot
+.26959 .60332 Mdot
+.30031 .59573 Mdot
+.33103 .57669 Mdot
+.36175 .54696 Mdot
+.39247 .50773 Mdot
+.4232 .46055 Mdot
+.45392 .40731 Mdot
+.48464 .35013 Mdot
+.51536 .2913 Mdot
+.54608 .23315 Mdot
+.5768 .178 Mdot
+.60753 .12806 Mdot
+.63825 .08531 Mdot
+.66897 .05146 Mdot
+.69969 .02786 Mdot
+.73041 .01544 Mdot
+.76114 .01472 Mdot
+.79186 .0257 Mdot
+.82258 .04796 Mdot
+.8533 .0806 Mdot
+.88402 .12233 Mdot
+.91475 .17149 Mdot
+.94547 .22611 Mdot
+.97619 .28401 Mdot
+P
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageSize->{240, 148},
+  ImageMargins->{{67, Inherited}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCacheValid->False]}, Open]]}, Open]],
+
+Cell[CellGroupData[{Cell["PointPlot3D", "Subsection",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+     PointPlot3D[ f, {x, min, max, (step)}, {y, min, max, (step)}] produces a \
+plot of f(x, y), plotted with points instead of surfaces.\
+\>", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell["\<\
+PointPlot3D[x y, {x, -4, 4, 0.5}, {y, -4, 4, 0.5}, 
+\t\t\tBoxRatios->{1,1,1}]\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: 1.08079 
+MathPictureStart
+%% Graphics3D
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+-0.0260524 1.10184 0.0275459 1.10184 [
+[ 0 0 0 0 ]
+[ 1 1.08079 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+[ ] 0 setdash
+0 g
+0 0 m
+1 0 L
+1 1.08079 L
+0 1.08079 L
+closepath
+clip
+newpath
+p
+.002 w
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.40586 1.05324 L
+s
+.40586 1.05324 m
+.42251 .57709 L
+s
+.42251 .57709 m
+.11113 .25957 L
+s
+.66295 .02755 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.66295 .02755 m
+.11113 .25957 L
+s
+.42251 .57709 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.40586 1.05324 L
+s
+.40586 1.05324 m
+.42251 .57709 L
+s
+P
+p
+.01 w
+.42645 .57714 Mdot
+P
+p
+.01 w
+.45228 .59338 Mdot
+P
+p
+.01 w
+.40978 .58604 Mdot
+P
+p
+.01 w
+.47885 .61008 Mdot
+P
+p
+.01 w
+.43597 .59951 Mdot
+P
+p
+.01 w
+.39247 .59528 Mdot
+P
+p
+.01 w
+.50619 .62726 Mdot
+P
+p
+.01 w
+.46285 .61334 Mdot
+P
+p
+.01 w
+.41905 .60587 Mdot
+P
+p
+.01 w
+.53434 .64495 Mdot
+P
+p
+.01 w
+.37449 .60488 Mdot
+P
+p
+.01 w
+.49047 .62755 Mdot
+P
+p
+.01 w
+.4463 .61672 Mdot
+P
+p
+.01 w
+.40151 .61246 Mdot
+P
+p
+.01 w
+.56332 .66317 Mdot
+P
+p
+.01 w
+.51885 .64215 Mdot
+P
+p
+.01 w
+.47423 .62785 Mdot
+P
+p
+.01 w
+.35579 .61487 Mdot
+P
+p
+.01 w
+.42915 .62022 Mdot
+P
+p
+.01 w
+.54803 .65716 Mdot
+P
+p
+.01 w
+.59318 .68193 Mdot
+P
+p
+.01 w
+.38329 .61931 Mdot
+P
+p
+.01 w
+.50289 .63927 Mdot
+P
+p
+.01 w
+.45745 .62816 Mdot
+P
+p
+.01 w
+.33632 .62526 Mdot
+P
+p
+.01 w
+.41139 .62385 Mdot
+P
+p
+.01 w
+.57803 .67259 Mdot
+P
+p
+.01 w
+.53229 .65098 Mdot
+P
+p
+.01 w
+.62396 .70127 Mdot
+P
+p
+.01 w
+.48641 .63629 Mdot
+P
+p
+.01 w
+.36437 .62642 Mdot
+P
+p
+.01 w
+.44009 .62848 Mdot
+P
+p
+.01 w
+.56246 .663 Mdot
+P
+p
+.01 w
+.60889 .68847 Mdot
+P
+p
+.01 w
+.51608 .64461 Mdot
+P
+p
+.01 w
+.39297 .62761 Mdot
+P
+p
+.01 w
+.65569 .72122 Mdot
+P
+p
+.01 w
+.31605 .63609 Mdot
+P
+p
+.01 w
+.46941 .63322 Mdot
+P
+p
+.01 w
+.42212 .62881 Mdot
+P
+p
+.01 w
+.3447 .63382 Mdot
+P
+p
+.01 w
+.59344 .67534 Mdot
+P
+p
+.01 w
+.54647 .65314 Mdot
+P
+p
+.01 w
+.64065 .70481 Mdot
+P
+p
+.01 w
+.49938 .63806 Mdot
+P
+p
+.01 w
+.68844 .7418 Mdot
+P
+p
+.01 w
+.37386 .63151 Mdot
+P
+p
+.01 w
+.45185 .63004 Mdot
+P
+p
+.01 w
+.29491 .64737 Mdot
+P
+p
+.01 w
+.5776 .66188 Mdot
+P
+p
+.01 w
+.62526 .68802 Mdot
+P
+p
+.01 w
+.53002 .643 Mdot
+P
+p
+.01 w
+.40352 .62916 Mdot
+P
+p
+.01 w
+.67336 .72163 Mdot
+P
+p
+.01 w
+.48217 .6313 Mdot
+P
+p
+.01 w
+.32424 .64151 Mdot
+P
+p
+.01 w
+.72223 .76304 Mdot
+P
+p
+.01 w
+.60951 .67083 Mdot
+P
+p
+.01 w
+.43371 .62676 Mdot
+P
+p
+.01 w
+.56135 .64806 Mdot
+P
+p
+.01 w
+.35402 .63556 Mdot
+P
+p
+.01 w
+.65796 .70104 Mdot
+P
+p
+.01 w
+.51311 .63258 Mdot
+P
+p
+.01 w
+.70704 .73896 Mdot
+P
+p
+.01 w
+.27286 .65915 Mdot
+P
+p
+.01 w
+.46443 .62433 Mdot
+P
+p
+.01 w
+.38425 .62951 Mdot
+P
+p
+.01 w
+.59339 .65324 Mdot
+P
+p
+.01 w
+.64223 .68001 Mdot
+P
+p
+.01 w
+.75714 .78498 Mdot
+P
+p
+.01 w
+.54467 .63388 Mdot
+P
+p
+.01 w
+.30293 .64952 Mdot
+P
+p
+.01 w
+.69156 .71443 Mdot
+P
+p
+.01 w
+.41495 .62337 Mdot
+P
+p
+.01 w
+.4957 .62185 Mdot
+P
+p
+.01 w
+.3334 .63976 Mdot
+P
+p
+.01 w
+.74175 .75682 Mdot
+P
+p
+.01 w
+.62617 .65853 Mdot
+P
+p
+.01 w
+.57688 .63522 Mdot
+P
+p
+.01 w
+.44612 .61714 Mdot
+P
+p
+.01 w
+.67579 .68943 Mdot
+P
+p
+.01 w
+.52754 .61933 Mdot
+P
+p
+.01 w
+.36427 .62988 Mdot
+P
+p
+.01 w
+.7932 .80764 Mdot
+P
+p
+.01 w
+.72612 .72819 Mdot
+P
+p
+.01 w
+.24982 .67144 Mdot
+P
+p
+.01 w
+.47779 .61081 Mdot
+P
+p
+.01 w
+.39554 .61987 Mdot
+P
+p
+.01 w
+.60975 .63658 Mdot
+P
+p
+.01 w
+.65971 .66394 Mdot
+P
+p
+.01 w
+.28073 .65786 Mdot
+P
+p
+.01 w
+.55996 .61676 Mdot
+P
+p
+.01 w
+.77754 .77523 Mdot
+P
+p
+.01 w
+.71022 .69909 Mdot
+P
+p
+.01 w
+.50995 .60438 Mdot
+P
+p
+.01 w
+.42723 .60972 Mdot
+P
+p
+.01 w
+.31197 .64414 Mdot
+P
+p
+.01 w
+.76166 .74235 Mdot
+P
+p
+.01 w
+.64332 .63797 Mdot
+P
+p
+.01 w
+.59298 .61414 Mdot
+P
+p
+.01 w
+.34354 .63026 Mdot
+P
+p
+.01 w
+.83048 .83107 Mdot
+P
+p
+.01 w
+.69405 .66949 Mdot
+P
+p
+.01 w
+.45934 .59944 Mdot
+P
+p
+.01 w
+.54263 .59785 Mdot
+P
+p
+.01 w
+.74555 .709 Mdot
+P
+p
+.01 w
+.37546 .61624 Mdot
+P
+p
+.01 w
+.22575 .6843 Mdot
+P
+p
+.01 w
+.81445 .79422 Mdot
+P
+p
+.01 w
+.49188 .58902 Mdot
+P
+p
+.01 w
+.62661 .61148 Mdot
+P
+p
+.01 w
+.6776 .63939 Mdot
+P
+p
+.01 w
+.57583 .59121 Mdot
+P
+p
+.01 w
+.25758 .66657 Mdot
+P
+p
+.01 w
+.40772 .60206 Mdot
+P
+p
+.01 w
+.79823 .75692 Mdot
+P
+p
+.01 w
+.7292 .67516 Mdot
+P
+p
+.01 w
+.52487 .57846 Mdot
+P
+p
+.01 w
+.28967 .64869 Mdot
+P
+p
+.01 w
+.44034 .58773 Mdot
+P
+p
+.01 w
+.86905 .85531 Mdot
+P
+p
+.01 w
+.66087 .60876 Mdot
+P
+p
+.01 w
+.60957 .58447 Mdot
+P
+p
+.01 w
+.78182 .71918 Mdot
+P
+p
+.01 w
+.32203 .63066 Mdot
+P
+p
+.01 w
+.71262 .64083 Mdot
+P
+p
+.01 w
+.5583 .56776 Mdot
+P
+p
+.01 w
+.47331 .57324 Mdot
+P
+p
+.01 w
+.85255 .81381 Mdot
+P
+p
+.01 w
+.35466 .61248 Mdot
+P
+p
+.01 w
+.7652 .68098 Mdot
+P
+p
+.01 w
+.64386 .57761 Mdot
+P
+p
+.01 w
+.83589 .77192 Mdot
+P
+p
+.01 w
+.69579 .606 Mdot
+P
+p
+.01 w
+.50665 .55859 Mdot
+P
+p
+.01 w
+.38757 .59415 Mdot
+P
+p
+.01 w
+.59218 .55691 Mdot
+P
+p
+.01 w
+.20055 .69775 Mdot
+P
+p
+.01 w
+.74839 .64231 Mdot
+P
+p
+.01 w
+.42075 .57566 Mdot
+P
+p
+.01 w
+.81907 .72963 Mdot
+P
+p
+.01 w
+.2334 .67565 Mdot
+P
+p
+.01 w
+.54036 .54378 Mdot
+P
+p
+.01 w
+.67871 .57064 Mdot
+P
+p
+.01 w
+.90897 .8804 Mdot
+P
+p
+.01 w
+.62654 .54591 Mdot
+P
+p
+.01 w
+.26644 .65343 Mdot
+P
+p
+.01 w
+.45422 .55701 Mdot
+P
+p
+.01 w
+.80209 .68693 Mdot
+P
+p
+.01 w
+.73137 .60318 Mdot
+P
+p
+.01 w
+.29968 .63107 Mdot
+P
+p
+.01 w
+.57445 .5288 Mdot
+P
+p
+.01 w
+.89188 .83405 Mdot
+P
+p
+.01 w
+.48797 .53821 Mdot
+P
+p
+.01 w
+.33311 .60858 Mdot
+P
+p
+.01 w
+.78495 .64383 Mdot
+P
+p
+.01 w
+.87467 .78737 Mdot
+P
+p
+.01 w
+.66137 .53476 Mdot
+P
+p
+.01 w
+.71414 .56356 Mdot
+P
+p
+.01 w
+.60892 .51365 Mdot
+P
+p
+.01 w
+.36673 .58596 Mdot
+P
+p
+.01 w
+.52202 .51924 Mdot
+P
+p
+.01 w
+.85734 .74037 Mdot
+P
+p
+.01 w
+.76764 .6003 Mdot
+P
+p
+.01 w
+.40056 .56321 Mdot
+P
+p
+.01 w
+.55635 .50012 Mdot
+P
+p
+.01 w
+.83988 .69304 Mdot
+P
+p
+.01 w
+.69669 .52345 Mdot
+P
+p
+.01 w
+.64378 .49834 Mdot
+P
+p
+.01 w
+.43458 .54032 Mdot
+P
+p
+.01 w
+.75016 .55636 Mdot
+P
+p
+.01 w
+.82231 .64537 Mdot
+P
+p
+.01 w
+.95031 .90638 Mdot
+P
+p
+.01 w
+.59098 .48082 Mdot
+P
+p
+.01 w
+.46881 .5173 Mdot
+P
+p
+.01 w
+.17416 .71184 Mdot
+P
+p
+.01 w
+.20814 .68515 Mdot
+P
+p
+.01 w
+.93251 .85495 Mdot
+P
+p
+.01 w
+.67903 .48285 Mdot
+P
+p
+.01 w
+.50324 .49414 Mdot
+P
+p
+.01 w
+.80461 .59737 Mdot
+P
+p
+.01 w
+.73251 .51199 Mdot
+P
+p
+.01 w
+.24224 .65837 Mdot
+P
+p
+.01 w
+.91463 .80329 Mdot
+P
+p
+.01 w
+.62591 .46136 Mdot
+P
+p
+.01 w
+.27644 .6315 Mdot
+P
+p
+.01 w
+.53788 .47084 Mdot
+P
+p
+.01 w
+.89667 .7514 Mdot
+P
+p
+.01 w
+.31076 .60454 Mdot
+P
+p
+.01 w
+.78679 .54904 Mdot
+P
+p
+.01 w
+.71469 .46718 Mdot
+P
+p
+.01 w
+.34518 .5775 Mdot
+P
+p
+.01 w
+.87863 .69929 Mdot
+P
+p
+.01 w
+.66115 .44173 Mdot
+P
+p
+.01 w
+.57272 .4474 Mdot
+P
+p
+.01 w
+.37972 .55037 Mdot
+P
+p
+.01 w
+.76884 .50036 Mdot
+P
+p
+.01 w
+.86051 .64695 Mdot
+P
+p
+.01 w
+.41438 .52315 Mdot
+P
+p
+.01 w
+.60778 .42382 Mdot
+P
+p
+.01 w
+.84232 .59439 Mdot
+P
+p
+.01 w
+.6967 .42193 Mdot
+P
+p
+.01 w
+.44914 .49584 Mdot
+P
+p
+.01 w
+.75076 .45133 Mdot
+P
+p
+.01 w
+.48403 .46844 Mdot
+P
+p
+.01 w
+.64304 .40009 Mdot
+P
+p
+.01 w
+.82404 .54159 Mdot
+P
+p
+.01 w
+.51902 .44095 Mdot
+P
+p
+.01 w
+.80568 .48856 Mdot
+P
+p
+.01 w
+.73255 .40195 Mdot
+P
+p
+.01 w
+.67852 .37623 Mdot
+P
+p
+.01 w
+.55413 .41337 Mdot
+P
+p
+.01 w
+.78725 .4353 Mdot
+P
+p
+.01 w
+.58936 .3857 Mdot
+P
+p
+.01 w
+.71422 .35222 Mdot
+P
+p
+.01 w
+.62471 .35793 Mdot
+P
+p
+.01 w
+.76873 .3818 Mdot
+P
+p
+.01 w
+.66017 .33008 Mdot
+P
+p
+.01 w
+.75013 .32806 Mdot
+P
+p
+.01 w
+.14648 .72662 Mdot
+P
+p
+.01 w
+.18172 .69508 Mdot
+P
+p
+.01 w
+.69575 .30213 Mdot
+P
+p
+.01 w
+.21698 .66352 Mdot
+P
+p
+.01 w
+.25226 .63195 Mdot
+P
+p
+.01 w
+.28756 .60035 Mdot
+P
+p
+.01 w
+.32288 .56874 Mdot
+P
+p
+.01 w
+.35822 .53712 Mdot
+P
+p
+.01 w
+.39358 .50547 Mdot
+P
+p
+.01 w
+.73145 .27409 Mdot
+P
+p
+.01 w
+.42895 .47381 Mdot
+P
+p
+.01 w
+.46435 .44213 Mdot
+P
+p
+.01 w
+.49977 .41043 Mdot
+P
+p
+.01 w
+.5352 .37871 Mdot
+P
+p
+.01 w
+.57066 .34698 Mdot
+P
+p
+.01 w
+.60613 .31523 Mdot
+P
+p
+.01 w
+.64163 .28346 Mdot
+P
+p
+.01 w
+.67715 .25168 Mdot
+P
+p
+.01 w
+.71268 .21987 Mdot
+P
+p
+.01 w
+.69383 .16542 Mdot
+P
+p
+.01 w
+.65841 .20086 Mdot
+P
+p
+.01 w
+.62291 .23638 Mdot
+P
+p
+.01 w
+.6749 .11072 Mdot
+P
+p
+.01 w
+.58732 .27198 Mdot
+P
+p
+.01 w
+.55166 .30766 Mdot
+P
+p
+.01 w
+.65588 .05578 Mdot
+P
+p
+.01 w
+.63953 .14967 Mdot
+P
+p
+.01 w
+.51592 .34342 Mdot
+P
+p
+.01 w
+.4801 .37926 Mdot
+P
+p
+.01 w
+.60399 .18882 Mdot
+P
+p
+.01 w
+.4442 .41518 Mdot
+P
+p
+.01 w
+.62052 .09811 Mdot
+P
+p
+.01 w
+.40822 .45118 Mdot
+P
+p
+.01 w
+.56827 .22817 Mdot
+P
+p
+.01 w
+.37216 .48726 Mdot
+P
+p
+.01 w
+.33601 .52343 Mdot
+P
+p
+.01 w
+.29979 .55967 Mdot
+P
+p
+.01 w
+.58489 .14078 Mdot
+P
+p
+.01 w
+.53237 .26772 Mdot
+P
+p
+.01 w
+.26348 .596 Mdot
+P
+p
+.01 w
+.22709 .63241 Mdot
+P
+p
+.01 w
+.49628 .30747 Mdot
+P
+p
+.01 w
+.19062 .6689 Mdot
+P
+p
+.01 w
+.54897 .18379 Mdot
+P
+p
+.01 w
+.15406 .70547 Mdot
+P
+p
+.01 w
+.46001 .34742 Mdot
+P
+p
+.01 w
+.11743 .74213 Mdot
+P
+p
+.01 w
+.42356 .38758 Mdot
+P
+p
+.01 w
+.51277 .22714 Mdot
+P
+p
+.01 w
+.38692 .42794 Mdot
+P
+p
+.01 w
+.47627 .27084 Mdot
+P
+p
+.01 w
+.35009 .46851 Mdot
+P
+p
+.01 w
+.31307 .50929 Mdot
+P
+p
+.01 w
+.43949 .31489 Mdot
+P
+p
+.01 w
+.27586 .55028 Mdot
+P
+p
+.01 w
+.40241 .35929 Mdot
+P
+p
+.01 w
+.23845 .59148 Mdot
+P
+p
+.01 w
+.20086 .63289 Mdot
+P
+p
+.01 w
+.36503 .40405 Mdot
+P
+p
+.01 w
+.16306 .67452 Mdot
+P
+p
+.01 w
+.32734 .44918 Mdot
+P
+p
+.01 w
+.12507 .71637 Mdot
+P
+p
+.01 w
+.08688 .75844 Mdot
+P
+p
+.01 w
+.28935 .49467 Mdot
+P
+p
+.01 w
+.25105 .54053 Mdot
+P
+p
+.01 w
+.21243 .58677 Mdot
+P
+p
+.01 w
+.17349 .6334 Mdot
+P
+p
+.01 w
+.13423 .68041 Mdot
+P
+p
+.01 w
+.09465 .72781 Mdot
+P
+p
+.01 w
+.05473 .7756 Mdot
+P
+p
+.002 w
+.66295 .02755 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.66295 .02755 m
+.11113 .25957 L
+s
+P
+p
+P
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageSize->{192, 207},
+  ImageMargins->{{107, Inherited}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCacheValid->False]}, Open]]}, Open]],
+
+Cell[CellGroupData[{Cell["PointParamPlot3D", "Subsection",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+     PointParamPlot3D[{x,y,z}, {u, min, max, (step)}, {v, min, max, (step)}] \
+produces a parametric plot of (x(u,v), y(u,v), z(u,v)), plotted with points \
+instead of surfaces.\
+\>", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell["\<\
+PointParamPlot3D[{Sin[u] Cos[v], 
+\t\t\t\t\t\tSin[u] Sin[v], Cos[u]}, 
+\t\t{u, 0, Pi, Pi/15}, {v, 0, 2 Pi, Pi/15}, 
+\t\tBoxRatios->{1,1,1}]\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: 1.08079 
+MathPictureStart
+%% Graphics3D
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+-0.0260524 1.10184 0.0275459 1.10184 [
+[ 0 0 0 0 ]
+[ 1 1.08079 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+[ ] 0 setdash
+0 g
+0 0 m
+1 0 L
+1 1.08079 L
+0 1.08079 L
+closepath
+clip
+newpath
+p
+.002 w
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.40586 1.05324 L
+s
+.40586 1.05324 m
+.42251 .57709 L
+s
+.42251 .57709 m
+.11113 .25957 L
+s
+.66295 .02755 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.66295 .02755 m
+.11113 .25957 L
+s
+.42251 .57709 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.40586 1.05324 L
+s
+.40586 1.05324 m
+.42251 .57709 L
+s
+P
+p
+.01 w
+.51912 .60848 Mdot
+P
+p
+.01 w
+.51994 .55294 Mdot
+P
+p
+.01 w
+.56127 .55106 Mdot
+P
+p
+.01 w
+.5673 .60637 Mdot
+P
+p
+.01 w
+.47877 .54959 Mdot
+P
+p
+.01 w
+.47113 .60471 Mdot
+P
+p
+.01 w
+.51853 .66316 Mdot
+P
+p
+.01 w
+.52095 .49808 Mdot
+P
+p
+.01 w
+.60135 .544 Mdot
+P
+p
+.01 w
+.55381 .49653 Mdot
+P
+p
+.01 w
+.61408 .59842 Mdot
+P
+p
+.01 w
+.57172 .66091 Mdot
+P
+p
+.01 w
+.48822 .49533 Mdot
+P
+p
+.01 w
+.43917 .54111 Mdot
+P
+p
+.01 w
+.46552 .65915 Mdot
+P
+p
+.01 w
+.42488 .59515 Mdot
+P
+p
+.01 w
+.58562 .49074 Mdot
+P
+p
+.01 w
+.45682 .48836 Mdot
+P
+p
+.01 w
+.62344 .65244 Mdot
+P
+p
+.01 w
+.63878 .53195 Mdot
+P
+p
+.01 w
+.41437 .64896 Mdot
+P
+p
+.01 w
+.6579 .58482 Mdot
+P
+p
+.01 w
+.40256 .52769 Mdot
+P
+p
+.01 w
+.61521 .48086 Mdot
+P
+p
+.01 w
+.51817 .71544 Mdot
+P
+p
+.01 w
+.52213 .44546 Mdot
+P
+p
+.01 w
+.5451 .44434 Mdot
+P
+p
+.01 w
+.49925 .44347 Mdot
+P
+p
+.01 w
+.57439 .71314 Mdot
+P
+p
+.01 w
+.42792 .47738 Mdot
+P
+p
+.01 w
+.38196 .58001 Mdot
+P
+p
+.01 w
+.46213 .71134 Mdot
+P
+p
+.01 w
+.5673 .44017 Mdot
+P
+p
+.01 w
+.47736 .43846 Mdot
+P
+p
+.01 w
+.67199 .63792 Mdot
+P
+p
+.01 w
+.67216 .51521 Mdot
+P
+p
+.01 w
+.58786 .43307 Mdot
+P
+p
+.01 w
+.62909 .7045 Mdot
+P
+p
+.01 w
+.64143 .46719 Mdot
+P
+p
+.01 w
+.45731 .43058 Mdot
+P
+p
+.01 w
+.36678 .63278 Mdot
+P
+p
+.01 w
+.40802 .70094 Mdot
+P
+p
+.01 w
+.40263 .46272 Mdot
+P
+p
+.01 w
+.37031 .50971 Mdot
+P
+p
+.01 w
+.69718 .56587 Mdot
+P
+p
+.01 w
+.60594 .42329 Mdot
+P
+p
+.01 w
+.43992 .4201 Mdot
+P
+p
+.01 w
+.34394 .55963 Mdot
+P
+p
+.01 w
+.51806 .76368 Mdot
+P
+p
+.01 w
+.52344 .3967 Mdot
+P
+p
+.01 w
+.53537 .3961 Mdot
+P
+p
+.01 w
+.51157 .39564 Mdot
+P
+p
+.01 w
+.57517 .76143 Mdot
+P
+p
+.01 w
+.54687 .39387 Mdot
+P
+p
+.01 w
+.68051 .68967 Mdot
+P
+p
+.01 w
+.50025 .39296 Mdot
+P
+p
+.01 w
+.66321 .45017 Mdot
+P
+p
+.01 w
+.46114 .75967 Mdot
+P
+p
+.01 w
+.55746 .3901 Mdot
+P
+p
+.01 w
+.71568 .61765 Mdot
+P
+p
+.01 w
+.62079 .41118 Mdot
+P
+p
+.01 w
+.70014 .49425 Mdot
+P
+p
+.01 w
+.48994 .38878 Mdot
+P
+p
+.01 w
+.38204 .44484 Mdot
+P
+p
+.01 w
+.35759 .68442 Mdot
+P
+p
+.01 w
+.42593 .40741 Mdot
+P
+p
+.01 w
+.5667 .38493 Mdot
+P
+p
+.01 w
+.48107 .38325 Mdot
+P
+p
+.01 w
+.63074 .75295 Mdot
+P
+p
+.01 w
+.32444 .61097 Mdot
+P
+p
+.01 w
+.34377 .48768 Mdot
+P
+p
+.01 w
+.40616 .74945 Mdot
+P
+p
+.01 w
+.5742 .37856 Mdot
+P
+p
+.01 w
+.73037 .54206 Mdot
+P
+p
+.01 w
+.47404 .37659 Mdot
+P
+p
+.01 w
+.63173 .39718 Mdot
+P
+p
+.01 w
+.67954 .43035 Mdot
+P
+p
+.01 w
+.57961 .37126 Mdot
+P
+p
+.01 w
+.416 .39297 Mdot
+P
+p
+.01 w
+.31239 .53457 Mdot
+P
+p
+.01 w
+.46916 .36907 Mdot
+P
+p
+.01 w
+.72689 .66894 Mdot
+P
+p
+.01 w
+.36712 .42437 Mdot
+P
+p
+.01 w
+.683 .73838 Mdot
+P
+p
+.01 w
+.58268 .36331 Mdot
+P
+p
+.01 w
+.72144 .46972 Mdot
+P
+p
+.01 w
+.51823 .80621 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.52487 .35349 Mdot
+P
+p
+.01 w
+.46667 .36101 Mdot
+P
+p
+.01 w
+.75279 .59211 Mdot
+P
+p
+.01 w
+.31261 .66211 Mdot
+P
+p
+.01 w
+.63822 .38183 Mdot
+P
+p
+.01 w
+.57395 .80408 Mdot
+P
+p
+.01 w
+.3549 .73322 Mdot
+P
+p
+.01 w
+.46269 .80241 Mdot
+P
+p
+.01 w
+.3242 .46229 Mdot
+P
+p
+.01 w
+.58325 .35506 Mdot
+P
+p
+.01 w
+.41063 .37735 Mdot
+P
+p
+.01 w
+.46671 .35273 Mdot
+P
+p
+.01 w
+.28909 .58406 Mdot
+P
+p
+.01 w
+.68957 .40847 Mdot
+P
+p
+.01 w
+.62815 .79606 Mdot
+P
+p
+.01 w
+.75593 .51406 Mdot
+P
+p
+.01 w
+.58126 .34687 Mdot
+P
+p
+.01 w
+.4693 .34462 Mdot
+P
+p
+.01 w
+.40908 .79276 Mdot
+P
+p
+.01 w
+.63985 .36575 Mdot
+P
+p
+.01 w
+.35869 .40205 Mdot
+P
+p
+.01 w
+.57676 .3391 Mdot
+P
+p
+.01 w
+.57676 .3391 Mdot
+P
+p
+.01 w
+.73017 .71802 Mdot
+P
+p
+.01 w
+.41019 .36119 Mdot
+P
+p
+.01 w
+.28881 .50554 Mdot
+P
+p
+.01 w
+.47438 .33703 Mdot
+P
+p
+.01 w
+.76641 .64278 Mdot
+P
+p
+.01 w
+.73491 .44245 Mdot
+P
+p
+.01 w
+.56993 .3321 Mdot
+P
+p
+.01 w
+.30915 .7113 Mdot
+P
+p
+.01 w
+.48174 .33031 Mdot
+P
+p
+.01 w
+.67909 .78229 Mdot
+P
+p
+.01 w
+.63642 .34964 Mdot
+P
+p
+.01 w
+.27492 .63452 Mdot
+P
+p
+.01 w
+.56104 .32621 Mdot
+P
+p
+.01 w
+.78163 .56197 Mdot
+P
+p
+.01 w
+.69263 .38537 Mdot
+P
+p
+.01 w
+.31273 .43442 Mdot
+P
+p
+.01 w
+.49107 .32479 Mdot
+P
+p
+.01 w
+.35911 .77742 Mdot
+P
+p
+.01 w
+.41483 .3452 Mdot
+P
+p
+.01 w
+.55048 .3217 Mdot
+P
+p
+.01 w
+.50195 .32071 Mdot
+P
+p
+.01 w
+.35735 .37878 Mdot
+P
+p
+.01 w
+.53874 .3188 Mdot
+P
+p
+.01 w
+.5139 .31829 Mdot
+P
+p
+.01 w
+.51867 .84124 Mdot
+P
+p
+.01 w
+.52635 .31764 Mdot
+P
+p
+.01 w
+.26241 .55277 Mdot
+P
+p
+.01 w
+.57064 .83931 Mdot
+P
+p
+.01 w
+.77247 .48276 Mdot
+P
+p
+.01 w
+.46689 .83779 Mdot
+P
+p
+.01 w
+.62795 .33422 Mdot
+P
+p
+.01 w
+.62795 .33422 Mdot
+P
+p
+.01 w
+.42447 .33011 Mdot
+P
+p
+.01 w
+.77041 .69231 Mdot
+P
+p
+.01 w
+.62114 .83203 Mdot
+P
+p
+.01 w
+.72502 .76306 Mdot
+P
+p
+.01 w
+.73959 .41346 Mdot
+P
+p
+.01 w
+.27458 .47351 Mdot
+P
+p
+.01 w
+.6883 .36202 Mdot
+P
+p
+.01 w
+.41695 .82903 Mdot
+P
+p
+.01 w
+.7973 .61183 Mdot
+P
+p
+.01 w
+.61471 .32024 Mdot
+P
+p
+.01 w
+.27076 .68418 Mdot
+P
+p
+.01 w
+.31458 .75672 Mdot
+P
+p
+.01 w
+.36347 .35555 Mdot
+P
+p
+.01 w
+.31024 .40515 Mdot
+P
+p
+.01 w
+.43879 .31665 Mdot
+P
+p
+.01 w
+.2463 .60238 Mdot
+P
+p
+.01 w
+.66853 .81954 Mdot
+P
+p
+.01 w
+.80059 .52813 Mdot
+P
+p
+.01 w
+.59722 .30837 Mdot
+P
+p
+.01 w
+.4572 .3055 Mdot
+P
+p
+.01 w
+.3705 .81513 Mdot
+P
+p
+.01 w
+.6765 .3395 Mdot
+P
+p
+.01 w
+.6765 .3395 Mdot
+P
+p
+.01 w
+.77876 .44929 Mdot
+P
+p
+.01 w
+.57623 .29924 Mdot
+P
+p
+.01 w
+.24598 .5181 Mdot
+P
+p
+.01 w
+.47889 .29724 Mdot
+P
+p
+.01 w
+.37703 .33346 Mdot
+P
+p
+.01 w
+.73484 .38395 Mdot
+P
+p
+.01 w
+.76415 .73879 Mdot
+P
+p
+.01 w
+.55273 .29334 Mdot
+P
+p
+.01 w
+.50283 .29231 Mdot
+P
+p
+.01 w
+.8019 .66187 Mdot
+P
+p
+.01 w
+.51941 .86695 Mdot
+P
+p
+.01 w
+.52785 .29099 Mdot
+P
+p
+.01 w
+.27087 .43966 Mdot
+P
+p
+.01 w
+.56521 .86528 Mdot
+P
+p
+.01 w
+.47377 .86397 Mdot
+P
+p
+.01 w
+.71114 .80213 Mdot
+P
+p
+.01 w
+.3173 .37573 Mdot
+P
+p
+.01 w
+.27728 .73113 Mdot
+P
+p
+.01 w
+.81779 .57702 Mdot
+P
+p
+.01 w
+.65751 .31891 Mdot
+P
+p
+.01 w
+.24156 .65257 Mdot
+P
+p
+.01 w
+.60967 .85899 Mdot
+P
+p
+.01 w
+.32923 .79639 Mdot
+P
+p
+.01 w
+.42983 .8564 Mdot
+P
+p
+.01 w
+.39767 .31361 Mdot
+P
+p
+.01 w
+.80824 .49179 Mdot
+P
+p
+.01 w
+.22847 .56668 Mdot
+P
+p
+.01 w
+.72038 .35526 Mdot
+P
+p
+.01 w
+.72038 .35526 Mdot
+P
+p
+.01 w
+.65127 .84823 Mdot
+P
+p
+.01 w
+.63201 .30132 Mdot
+P
+p
+.01 w
+.77391 .41501 Mdot
+P
+p
+.01 w
+.3891 .84443 Mdot
+P
+p
+.01 w
+.42458 .29706 Mdot
+P
+p
+.01 w
+.24119 .4813 Mdot
+P
+p
+.01 w
+.79469 .71009 Mdot
+P
+p
+.01 w
+.33408 .34754 Mdot
+P
+p
+.01 w
+.74728 .7802 Mdot
+P
+p
+.01 w
+.27847 .40542 Mdot
+P
+p
+.01 w
+.60112 .28772 Mdot
+P
+p
+.01 w
+.82286 .62761 Mdot
+P
+p
+.01 w
+.29482 .77329 Mdot
+P
+p
+.01 w
+.45658 .28473 Mdot
+P
+p
+.01 w
+.24898 .70133 Mdot
+P
+p
+.01 w
+.6885 .83327 Mdot
+P
+p
+.01 w
+.5663 .2789 Mdot
+P
+p
+.01 w
+.49209 .27735 Mdot
+P
+p
+.01 w
+.69645 .32886 Mdot
+P
+p
+.01 w
+.82634 .53952 Mdot
+P
+p
+.01 w
+.52042 .88153 Mdot
+P
+p
+.01 w
+.52931 .27537 Mdot
+P
+p
+.01 w
+.22331 .61742 Mdot
+P
+p
+.01 w
+.35309 .82834 Mdot
+P
+p
+.01 w
+.55771 .88018 Mdot
+P
+p
+.01 w
+.48328 .87913 Mdot
+P
+p
+.01 w
+.36019 .32204 Mdot
+P
+p
+.01 w
+.80348 .45439 Mdot
+P
+p
+.01 w
+.59384 .87513 Mdot
+P
+p
+.01 w
+.75746 .38148 Mdot
+P
+p
+.01 w
+.75746 .38148 Mdot
+P
+p
+.01 w
+.22294 .52867 Mdot
+P
+p
+.01 w
+.44761 .87305 Mdot
+P
+p
+.01 w
+.77531 .75435 Mdot
+P
+p
+.01 w
+.2977 .37242 Mdot
+P
+p
+.01 w
+.71987 .81448 Mdot
+P
+p
+.01 w
+.24903 .4439 Mdot
+P
+p
+.01 w
+.81493 .67781 Mdot
+P
+p
+.01 w
+.62751 .8665 Mdot
+P
+p
+.01 w
+.66386 .30617 Mdot
+P
+p
+.01 w
+.2689 .74647 Mdot
+P
+p
+.01 w
+.41468 .86346 Mdot
+P
+p
+.01 w
+.39469 .30064 Mdot
+P
+p
+.01 w
+.3233 .80858 Mdot
+P
+p
+.01 w
+.83168 .59067 Mdot
+P
+p
+.01 w
+.23139 .66823 Mdot
+P
+p
+.01 w
+.65746 .85454 Mdot
+P
+p
+.01 w
+.624 .28854 Mdot
+P
+p
+.01 w
+.72956 .35044 Mdot
+P
+p
+.01 w
+.43604 .28464 Mdot
+P
+p
+.01 w
+.8217 .50082 Mdot
+P
+p
+.01 w
+.38578 .85062 Mdot
+P
+p
+.01 w
+.21756 .57998 Mdot
+P
+p
+.01 w
+.78567 .41765 Mdot
+P
+p
+.01 w
+.78567 .41765 Mdot
+P
+p
+.01 w
+.74393 .79243 Mdot
+P
+p
+.01 w
+.32826 .34239 Mdot
+P
+p
+.01 w
+.57881 .27705 Mdot
+P
+p
+.01 w
+.48218 .27504 Mdot
+P
+p
+.01 w
+.79366 .72536 Mdot
+P
+p
+.01 w
+.5217 .88335 Mdot
+P
+p
+.01 w
+.53066 .27245 Mdot
+P
+p
+.01 w
+.23087 .48995 Mdot
+P
+p
+.01 w
+.54827 .88239 Mdot
+P
+p
+.01 w
+.49524 .88164 Mdot
+P
+p
+.01 w
+.26999 .40769 Mdot
+P
+p
+.01 w
+.30113 .78573 Mdot
+P
+p
+.01 w
+.68244 .83961 Mdot
+P
+p
+.01 w
+.57397 .8788 Mdot
+P
+p
+.01 w
+.82332 .64307 Mdot
+P
+p
+.01 w
+.46989 .87732 Mdot
+P
+p
+.01 w
+.25303 .71677 Mdot
+P
+p
+.01 w
+.36212 .83494 Mdot
+P
+p
+.01 w
+.69108 .32363 Mdot
+P
+p
+.01 w
+.5978 .87268 Mdot
+P
+p
+.01 w
+.44663 .87053 Mdot
+P
+p
+.01 w
+.22599 .63302 Mdot
+P
+p
+.01 w
+.3691 .31708 Mdot
+P
+p
+.01 w
+.82708 .55252 Mdot
+P
+p
+.01 w
+.61883 .86425 Mdot
+P
+p
+.01 w
+.75937 .76783 Mdot
+P
+p
+.01 w
+.70133 .82218 Mdot
+P
+p
+.01 w
+.75489 .38348 Mdot
+P
+p
+.01 w
+.80313 .4627 Mdot
+P
+p
+.01 w
+.80313 .4627 Mdot
+P
+p
+.01 w
+.42639 .8615 Mdot
+P
+p
+.01 w
+.2255 .54179 Mdot
+P
+p
+.01 w
+.64364 .3027 Mdot
+P
+p
+.01 w
+.34481 .81691 Mdot
+P
+p
+.01 w
+.80097 .69425 Mdot
+P
+p
+.01 w
+.28789 .76056 Mdot
+P
+p
+.01 w
+.30382 .3746 Mdot
+P
+p
+.01 w
+.4184 .29807 Mdot
+P
+p
+.01 w
+.25283 .45234 Mdot
+P
+p
+.01 w
+.63616 .85378 Mdot
+P
+p
+.01 w
+.41004 .85052 Mdot
+P
+p
+.01 w
+.58957 .28903 Mdot
+P
+p
+.01 w
+.24851 .68528 Mdot
+P
+p
+.01 w
+.47366 .28663 Mdot
+P
+p
+.01 w
+.81865 .60723 Mdot
+P
+p
+.01 w
+.5232 .87114 Mdot
+P
+p
+.01 w
+.53182 .28354 Mdot
+P
+p
+.01 w
+.53718 .87063 Mdot
+P
+p
+.01 w
+.50928 .87023 Mdot
+P
+p
+.01 w
+.71311 .80287 Mdot
+P
+p
+.01 w
+.55067 .86872 Mdot
+P
+p
+.01 w
+.49599 .86794 Mdot
+P
+p
+.01 w
+.64902 .84165 Mdot
+P
+p
+.01 w
+.71199 .35386 Mdot
+P
+p
+.01 w
+.56311 .86549 Mdot
+P
+p
+.01 w
+.76508 .74157 Mdot
+P
+p
+.01 w
+.33484 .79719 Mdot
+P
+p
+.01 w
+.23391 .59716 Mdot
+P
+p
+.01 w
+.48387 .86436 Mdot
+P
+p
+.01 w
+.80829 .5149 Mdot
+P
+p
+.01 w
+.80829 .5149 Mdot
+P
+p
+.01 w
+.39834 .838 Mdot
+P
+p
+.01 w
+.34943 .3466 Mdot
+P
+p
+.01 w
+.57398 .86106 Mdot
+P
+p
+.01 w
+.7706 .42714 Mdot
+P
+p
+.01 w
+.47344 .85962 Mdot
+P
+p
+.01 w
+.28463 .73402 Mdot
+P
+p
+.01 w
+.24775 .50468 Mdot
+P
+p
+.01 w
+.58282 .85559 Mdot
+P
+p
+.01 w
+.79617 .66227 Mdot
+P
+p
+.01 w
+.65673 .82832 Mdot
+P
+p
+.01 w
+.28864 .41788 Mdot
+P
+p
+.01 w
+.46515 .8539 Mdot
+P
+p
+.01 w
+.71697 .7824 Mdot
+P
+p
+.01 w
+.39192 .82442 Mdot
+P
+p
+.01 w
+.65877 .33065 Mdot
+P
+p
+.01 w
+.58922 .84932 Mdot
+P
+p
+.01 w
+.45937 .84744 Mdot
+P
+p
+.01 w
+.25631 .65331 Mdot
+P
+p
+.01 w
+.4048 .32551 Mdot
+P
+p
+.01 w
+.33295 .77654 Mdot
+P
+p
+.01 w
+.8002 .57193 Mdot
+P
+p
+.01 w
+.8002 .57193 Mdot
+P
+p
+.01 w
+.59289 .84248 Mdot
+P
+p
+.01 w
+.65883 .81432 Mdot
+P
+p
+.01 w
+.45638 .84049 Mdot
+P
+p
+.01 w
+.76023 .71473 Mdot
+P
+p
+.01 w
+.59788 .31545 Mdot
+P
+p
+.01 w
+.725 .39623 Mdot
+P
+p
+.01 w
+.46707 .31278 Mdot
+P
+p
+.01 w
+.39121 .81033 Mdot
+P
+p
+.01 w
+.77526 .47979 Mdot
+P
+p
+.01 w
+.2557 .56235 Mdot
+P
+p
+.01 w
+.59362 .83537 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.52487 .84426 Mdot
+P
+p
+.01 w
+.53271 .30935 Mdot
+P
+p
+.01 w
+.29207 .70724 Mdot
+P
+p
+.01 w
+.45637 .83336 Mdot
+P
+p
+.01 w
+.33717 .38865 Mdot
+P
+p
+.01 w
+.71238 .76164 Mdot
+P
+p
+.01 w
+.28413 .47065 Mdot
+P
+p
+.01 w
+.59133 .82829 Mdot
+P
+p
+.01 w
+.77869 .6309 Mdot
+P
+p
+.01 w
+.77869 .6309 Mdot
+P
+p
+.01 w
+.65503 .80024 Mdot
+P
+p
+.01 w
+.45938 .82635 Mdot
+P
+p
+.01 w
+.3396 .75587 Mdot
+P
+p
+.01 w
+.39642 .79635 Mdot
+P
+p
+.01 w
+.58607 .82157 Mdot
+P
+p
+.01 w
+.58607 .82157 Mdot
+P
+p
+.01 w
+.27686 .6224 Mdot
+P
+p
+.01 w
+.46532 .81979 Mdot
+P
+p
+.01 w
+.66821 .37198 Mdot
+P
+p
+.01 w
+.74445 .68855 Mdot
+P
+p
+.01 w
+.74445 .68855 Mdot
+P
+p
+.01 w
+.76797 .53903 Mdot
+P
+p
+.01 w
+.39631 .3666 Mdot
+P
+p
+.01 w
+.57804 .81551 Mdot
+P
+p
+.01 w
+.47396 .81397 Mdot
+P
+p
+.01 w
+.64532 .78673 Mdot
+P
+p
+.01 w
+.64532 .78673 Mdot
+P
+p
+.01 w
+.72887 .44925 Mdot
+P
+p
+.01 w
+.69916 .74153 Mdot
+P
+p
+.01 w
+.69916 .74153 Mdot
+P
+p
+.01 w
+.56758 .8104 Mdot
+P
+p
+.01 w
+.31047 .68148 Mdot
+P
+p
+.01 w
+.40751 .78312 Mdot
+P
+p
+.01 w
+.29118 .53047 Mdot
+P
+p
+.01 w
+.48495 .80917 Mdot
+P
+p
+.01 w
+.60308 .35607 Mdot
+P
+p
+.01 w
+.35486 .73613 Mdot
+P
+p
+.01 w
+.55513 .80649 Mdot
+P
+p
+.01 w
+.33353 .44176 Mdot
+P
+p
+.01 w
+.49779 .80563 Mdot
+P
+p
+.01 w
+.46295 .35327 Mdot
+P
+p
+.01 w
+.54126 .80397 Mdot
+P
+p
+.01 w
+.5119 .80353 Mdot
+P
+p
+.01 w
+.52662 .80297 Mdot
+P
+p
+.01 w
+.53327 .34967 Mdot
+P
+p
+.01 w
+.74861 .60175 Mdot
+P
+p
+.01 w
+.62999 .77444 Mdot
+P
+p
+.01 w
+.42412 .77129 Mdot
+P
+p
+.01 w
+.30988 .59418 Mdot
+P
+p
+.01 w
+.71793 .66435 Mdot
+P
+p
+.01 w
+.67759 .72308 Mdot
+P
+p
+.01 w
+.67101 .42527 Mdot
+P
+p
+.01 w
+.72282 .51045 Mdot
+P
+p
+.01 w
+.60961 .76399 Mdot
+P
+p
+.01 w
+.37835 .71832 Mdot
+P
+p
+.01 w
+.39378 .41995 Mdot
+P
+p
+.01 w
+.44559 .76146 Mdot
+P
+p
+.01 w
+.33948 .65808 Mdot
+P
+p
+.01 w
+.33923 .50344 Mdot
+P
+p
+.01 w
+.58508 .75593 Mdot
+P
+p
+.01 w
+.47095 .75416 Mdot
+P
+p
+.01 w
+.60462 .40953 Mdot
+P
+p
+.01 w
+.7068 .5765 Mdot
+P
+p
+.01 w
+.64841 .70728 Mdot
+P
+p
+.01 w
+.46172 .40676 Mdot
+P
+p
+.01 w
+.55755 .75072 Mdot
+P
+p
+.01 w
+.49901 .74981 Mdot
+P
+p
+.01 w
+.52837 .74864 Mdot
+P
+p
+.01 w
+.53344 .4032 Mdot
+P
+p
+.01 w
+.40919 .70343 Mdot
+P
+p
+.01 w
+.6815 .64349 Mdot
+P
+p
+.01 w
+.35431 .57032 Mdot
+P
+p
+.01 w
+.66662 .48802 Mdot
+P
+p
+.01 w
+.37811 .6384 Mdot
+P
+p
+.01 w
+.39773 .48305 Mdot
+P
+p
+.01 w
+.61289 .69502 Mdot
+P
+p
+.01 w
+.44602 .69232 Mdot
+P
+p
+.01 w
+.65501 .55674 Mdot
+P
+p
+.01 w
+.6022 .47332 Mdot
+P
+p
+.01 w
+.63672 .62723 Mdot
+P
+p
+.01 w
+.57273 .68705 Mdot
+P
+p
+.01 w
+.46364 .47073 Mdot
+P
+p
+.01 w
+.40818 .55236 Mdot
+P
+p
+.01 w
+.487 .68566 Mdot
+P
+p
+.01 w
+.42462 .62363 Mdot
+P
+p
+.01 w
+.53 .68386 Mdot
+P
+p
+.01 w
+.53318 .4674 Mdot
+P
+p
+.01 w
+.59581 .54381 Mdot
+P
+p
+.01 w
+.58577 .61661 Mdot
+P
+p
+.01 w
+.46871 .54154 Mdot
+P
+p
+.01 w
+.47666 .61475 Mdot
+P
+p
+.01 w
+.53141 .61236 Mdot
+P
+p
+.01 w
+.53249 .53861 Mdot
+P
+p
+.002 w
+.66295 .02755 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.66295 .02755 m
+.11113 .25957 L
+s
+P
+p
+P
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageSize->{195, 211},
+  ImageMargins->{{113, Inherited}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCacheValid->False]}, Open]]}, Open]],
+
+Cell[CellGroupData[{Cell["SpaceCurve", "Subsection",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+     SpaceCurve[{x,y,z}, {u, min, max, (step)}] produces a parametric plot of \
+(x(u), y(u), z(u)), with the calculated points connected by straight lines.\
+\>", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell["\<\
+SpaceCurve[{u Sin[u], u Cos[u], u}, 
+\t\t   {u, 0, 15, 0.15}, BoxRatios->{1,1,1}]\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: 1.08079 
+MathPictureStart
+%% Graphics3D
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+-0.0260524 1.10184 0.0275459 1.10184 [
+[ 0 0 0 0 ]
+[ 1 1.08079 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+[ ] 0 setdash
+0 g
+0 0 m
+1 0 L
+1 1.08079 L
+0 1.08079 L
+closepath
+clip
+newpath
+p
+.002 w
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.40586 1.05324 L
+s
+.40586 1.05324 m
+.42251 .57709 L
+s
+.42251 .57709 m
+.11113 .25957 L
+s
+.66295 .02755 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.66295 .02755 m
+.11113 .25957 L
+s
+.42251 .57709 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.40586 1.05324 L
+s
+.40586 1.05324 m
+.42251 .57709 L
+s
+P
+p
+.004 w
+.48793 .35633 m
+.48999 .36237 L
+s
+P
+p
+.004 w
+.48999 .36237 m
+.49278 .36796 L
+s
+P
+p
+.004 w
+.49278 .36796 m
+.49615 .37301 L
+s
+P
+p
+.004 w
+.49615 .37301 m
+.4999 .37743 L
+s
+P
+p
+.004 w
+.4999 .37743 m
+.50382 .38115 L
+s
+P
+p
+.004 w
+.50382 .38115 m
+.50768 .38415 L
+s
+P
+p
+.004 w
+.50768 .38415 m
+.51127 .38643 L
+s
+P
+p
+.004 w
+.47911 .60422 m
+.49868 .61118 L
+s
+P
+p
+.004 w
+.46068 .59559 m
+.47911 .60422 L
+s
+P
+p
+.004 w
+.49868 .61118 m
+.51899 .61636 L
+s
+P
+p
+.004 w
+.51127 .38643 m
+.51433 .38801 L
+s
+P
+p
+.004 w
+.44373 .58546 m
+.46068 .59559 L
+s
+P
+p
+.004 w
+.51899 .61636 m
+.53965 .61967 L
+s
+P
+p
+.004 w
+.42856 .57399 m
+.44373 .58546 L
+s
+P
+p
+.004 w
+.53965 .61967 m
+.56023 .62105 L
+s
+P
+p
+.004 w
+.51433 .38801 m
+.51666 .38896 L
+s
+P
+p
+.004 w
+.41544 .56138 m
+.42856 .57399 L
+s
+P
+p
+.004 w
+.56023 .62105 m
+.58026 .62048 L
+s
+P
+p
+.004 w
+.51666 .38896 m
+.51804 .38936 L
+s
+P
+p
+.004 w
+.4046 .54787 m
+.41544 .56138 L
+s
+P
+p
+.004 w
+.47378 .88392 m
+.51512 .89096 L
+s
+P
+p
+.004 w
+.43355 .87391 m
+.47378 .88392 L
+s
+P
+p
+.004 w
+.51512 .89096 m
+.55693 .89496 L
+s
+P
+p
+.004 w
+.51804 .38936 m
+.51829 .38932 L
+s
+P
+p
+.004 w
+.58026 .62048 m
+.59928 .61796 L
+s
+P
+p
+.004 w
+.39506 .86103 m
+.43355 .87391 L
+s
+P
+p
+.004 w
+.55693 .89496 m
+.59854 .89587 L
+s
+P
+p
+.004 w
+.39619 .53369 m
+.4046 .54787 L
+s
+P
+p
+.004 w
+.51829 .38932 m
+.51726 .389 L
+s
+P
+p
+.004 w
+.35893 .8454 m
+.39506 .86103 L
+s
+P
+p
+.004 w
+.59854 .89587 m
+.63929 .89367 L
+s
+P
+p
+.004 w
+.39031 .5191 m
+.39619 .53369 L
+s
+P
+p
+.004 w
+.59928 .61796 m
+.61682 .61353 L
+s
+P
+p
+.004 w
+.51726 .389 m
+.51482 .38855 L
+s
+P
+p
+.004 w
+.38701 .50436 m
+.39031 .5191 L
+s
+P
+p
+.004 w
+.32577 .82719 m
+.35893 .8454 L
+s
+P
+p
+.004 w
+.51482 .38855 m
+.51092 .38815 L
+s
+P
+p
+.004 w
+.63929 .89367 m
+.67845 .88839 L
+s
+P
+p
+.004 w
+.61682 .61353 m
+.63237 .6073 L
+s
+P
+p
+.004 w
+.38626 .48974 m
+.38701 .50436 L
+s
+P
+p
+.004 w
+.51092 .38815 m
+.50553 .388 L
+s
+P
+p
+.004 w
+.38797 .47549 m
+.38626 .48974 L
+s
+P
+p
+.004 w
+.29617 .80662 m
+.32577 .82719 L
+s
+P
+p
+.004 w
+.50553 .388 m
+.4987 .3883 L
+s
+P
+p
+.004 w
+.63237 .6073 m
+.64546 .59939 L
+s
+P
+p
+.004 w
+.67845 .88839 m
+.71529 .88007 L
+s
+P
+p
+.004 w
+.39196 .46185 m
+.38797 .47549 L
+s
+P
+p
+.004 w
+.4987 .3883 m
+.49051 .38924 L
+s
+P
+p
+.004 w
+.39803 .44906 m
+.39196 .46185 L
+s
+P
+p
+.004 w
+.49051 .38924 m
+.48114 .39102 L
+s
+P
+p
+.004 w
+.2707 .78393 m
+.29617 .80662 L
+s
+P
+p
+.004 w
+.48114 .39102 m
+.47078 .3938 L
+s
+P
+p
+.004 w
+.40589 .4373 m
+.39803 .44906 L
+s
+P
+p
+.004 w
+.64546 .59939 m
+.6556 .58998 L
+s
+P
+p
+.004 w
+.47078 .3938 m
+.45973 .39774 L
+s
+P
+p
+.004 w
+.41521 .42672 m
+.40589 .4373 L
+s
+P
+p
+.004 w
+.71529 .88007 m
+.74903 .86878 L
+s
+P
+p
+.004 w
+.45973 .39774 m
+.44828 .40295 L
+s
+P
+p
+.004 w
+.42564 .41743 m
+.41521 .42672 L
+s
+P
+p
+.004 w
+.44828 .40295 m
+.43679 .4095 L
+s
+P
+p
+.004 w
+.43679 .4095 m
+.42564 .41743 L
+s
+P
+p
+.004 w
+.2499 .75943 m
+.2707 .78393 L
+s
+P
+p
+.004 w
+.6556 .58998 m
+.66234 .5793 L
+s
+P
+p
+.004 w
+.74903 .86878 m
+.77884 .85465 L
+s
+P
+p
+.004 w
+.23426 .73348 m
+.2499 .75943 L
+s
+P
+p
+.004 w
+.66234 .5793 m
+.66526 .56763 L
+s
+P
+p
+.004 w
+.77884 .85465 m
+.80386 .83787 L
+s
+P
+p
+.004 w
+.66526 .56763 m
+.664 .5553 L
+s
+P
+p
+.004 w
+.22417 .70651 m
+.23426 .73348 L
+s
+P
+p
+.004 w
+.664 .5553 m
+.65826 .54271 L
+s
+P
+p
+.004 w
+.21995 .67898 m
+.22417 .70651 L
+s
+P
+p
+.004 w
+.80386 .83787 m
+.82321 .8187 L
+s
+P
+p
+.004 w
+.65826 .54271 m
+.64785 .53029 L
+s
+P
+p
+.004 w
+.22178 .65142 m
+.21995 .67898 L
+s
+P
+p
+.004 w
+.64785 .53029 m
+.6327 .5185 L
+s
+P
+p
+.004 w
+.82321 .8187 m
+.836 .79746 L
+s
+P
+p
+.004 w
+.2297 .62437 m
+.22178 .65142 L
+s
+P
+p
+.004 w
+.6327 .5185 m
+.61288 .50785 L
+s
+P
+p
+.004 w
+.24358 .59842 m
+.2297 .62437 L
+s
+P
+p
+.004 w
+.836 .79746 m
+.84136 .77458 L
+s
+P
+p
+.004 w
+.61288 .50785 m
+.58862 .49884 L
+s
+P
+p
+.004 w
+.26308 .57414 m
+.24358 .59842 L
+s
+P
+p
+.004 w
+.58862 .49884 m
+.56033 .49198 L
+s
+P
+p
+.004 w
+.28771 .55206 m
+.26308 .57414 L
+s
+P
+p
+.004 w
+.56033 .49198 m
+.5286 .48774 L
+s
+P
+p
+.004 w
+.84136 .77458 m
+.83847 .75061 L
+s
+P
+p
+.004 w
+.31674 .53268 m
+.28771 .55206 L
+s
+P
+p
+.004 w
+.5286 .48774 m
+.49419 .48651 L
+s
+P
+p
+.004 w
+.34932 .51641 m
+.31674 .53268 L
+s
+P
+p
+.004 w
+.49419 .48651 m
+.458 .48861 L
+s
+P
+p
+.004 w
+.38446 .50354 m
+.34932 .51641 L
+s
+P
+p
+.004 w
+.458 .48861 m
+.42105 .49426 L
+s
+P
+p
+.004 w
+.42105 .49426 m
+.38446 .50354 L
+s
+P
+p
+.004 w
+.83847 .75061 m
+.82665 .7262 L
+s
+P
+p
+.004 w
+.82665 .7262 m
+.80538 .7021 L
+s
+P
+p
+.004 w
+.80538 .7021 m
+.77441 .67919 L
+s
+P
+p
+.004 w
+.77441 .67919 m
+.73384 .65842 L
+s
+P
+p
+.004 w
+.73384 .65842 m
+.68416 .64076 L
+s
+P
+p
+.004 w
+.68416 .64076 m
+.62633 .62719 L
+s
+P
+p
+.004 w
+.62633 .62719 m
+.5618 .61859 L
+s
+P
+p
+.002 w
+.66295 .02755 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.66295 .02755 m
+.11113 .25957 L
+s
+P
+p
+P
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageSize->{192, 207},
+  ImageMargins->{{107, Inherited}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCacheValid->False]}, Open]]}, Open]],
+
+Cell[CellGroupData[{Cell["PointSpaceCurve", "Subsection",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+    PointSpaceCurve[{x,y,z}, {u, min, max, (step)}] produces a parametric \
+plot of (x(u), y(u), z(u)), with the calculated points shown as dots.\
+\>", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell["\<\
+PointSpaceCurve[{u Sin[u], u Cos[u], u^2}, 
+\t\t\t{u, 0, 15, 0.30}, BoxRatios->{1,1,1}]\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: 1.08079 
+MathPictureStart
+%% Graphics3D
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+-0.0260524 1.10184 0.0275459 1.10184 [
+[ 0 0 0 0 ]
+[ 1 1.08079 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+[ ] 0 setdash
+0 g
+0 0 m
+1 0 L
+1 1.08079 L
+0 1.08079 L
+closepath
+clip
+newpath
+p
+.002 w
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.40586 1.05324 L
+s
+.40586 1.05324 m
+.42251 .57709 L
+s
+.42251 .57709 m
+.11113 .25957 L
+s
+.66295 .02755 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.66295 .02755 m
+.11113 .25957 L
+s
+.42251 .57709 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.40586 1.05324 L
+s
+.40586 1.05324 m
+.42251 .57709 L
+s
+P
+p
+.01 w
+.48113 .50009 Mdot
+P
+p
+.01 w
+.51969 .50979 Mdot
+P
+p
+.01 w
+.44688 .48391 Mdot
+P
+p
+.01 w
+.55952 .5121 Mdot
+P
+p
+.01 w
+.41948 .4626 Mdot
+P
+p
+.01 w
+.5972 .50668 Mdot
+P
+p
+.01 w
+.40078 .43793 Mdot
+P
+p
+.01 w
+.47527 .80488 Mdot
+P
+p
+.01 w
+.50065 .36117 Mdot
+P
+p
+.01 w
+.49347 .35959 Mdot
+P
+p
+.01 w
+.50846 .36029 Mdot
+P
+p
+.01 w
+.55662 .82143 Mdot
+P
+p
+.01 w
+.39858 .77648 Mdot
+P
+p
+.01 w
+.48852 .35611 Mdot
+P
+p
+.01 w
+.5151 .35679 Mdot
+P
+p
+.01 w
+.39181 .41194 Mdot
+P
+p
+.01 w
+.62908 .49377 Mdot
+P
+p
+.01 w
+.51881 .35104 Mdot
+P
+p
+.01 w
+.51807 .34382 Mdot
+P
+p
+.01 w
+.33144 .73714 Mdot
+P
+p
+.01 w
+.63753 .82573 Mdot
+P
+p
+.01 w
+.39264 .38678 Mdot
+P
+p
+.01 w
+.51188 .33638 Mdot
+P
+p
+.01 w
+.4023 .36447 Mdot
+P
+p
+.01 w
+.49994 .3302 Mdot
+P
+p
+.01 w
+.65141 .47429 Mdot
+P
+p
+.01 w
+.41887 .34665 Mdot
+P
+p
+.01 w
+.48282 .3269 Mdot
+P
+p
+.01 w
+.43975 .33437 Mdot
+P
+p
+.01 w
+.462 .32794 Mdot
+P
+p
+.01 w
+.27844 .68843 Mdot
+P
+p
+.01 w
+.71252 .81791 Mdot
+P
+p
+.01 w
+.66066 .44996 Mdot
+P
+p
+.01 w
+.24377 .63271 Mdot
+P
+p
+.01 w
+.77556 .79865 Mdot
+P
+p
+.01 w
+.65388 .42336 Mdot
+P
+p
+.01 w
+.23068 .57324 Mdot
+P
+p
+.01 w
+.62932 .39786 Mdot
+P
+p
+.01 w
+.24084 .51415 Mdot
+P
+p
+.01 w
+.81999 .76942 Mdot
+P
+p
+.01 w
+.58702 .37746 Mdot
+P
+p
+.01 w
+.27365 .46008 Mdot
+P
+p
+.01 w
+.52947 .36626 Mdot
+P
+p
+.01 w
+.32573 .41554 Mdot
+P
+p
+.01 w
+.46173 .36777 Mdot
+P
+p
+.01 w
+.39105 .38414 Mdot
+P
+p
+.01 w
+.83878 .73283 Mdot
+P
+p
+.01 w
+.82519 .69296 Mdot
+P
+p
+.01 w
+.77432 .65564 Mdot
+P
+p
+.01 w
+.68525 .62814 Mdot
+P
+p
+.01 w
+.56335 .6181 Mdot
+P
+p
+.002 w
+.66295 .02755 m
+.90359 .41965 L
+s
+.90359 .41965 m
+.97245 .92345 L
+s
+.97245 .92345 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.11113 .25957 m
+.02755 .78701 L
+s
+.02755 .78701 m
+.69507 .58075 L
+s
+.69507 .58075 m
+.66295 .02755 L
+s
+.66295 .02755 m
+.11113 .25957 L
+s
+P
+p
+P
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageSize->{188, 203},
+  ImageMargins->{{114, Inherited}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCacheValid->False]}, Open]]}, Open]]}, Open]],
+
+Cell[CellGroupData[{Cell["Implementation", "Section",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  PageBreakAbove->True,
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+Remove previous definitions for the functions defined in this file:\
+\>", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+Remove[PointPlot, PointParamPlot3D, PointPlot3D,
+\t\tSpaceCurve, PointSpaceCurve];\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["Begin this package:", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["BeginPackage[\"PointPlots`\"];", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["Define the usage strings for each of the functions:", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+PointPlot::usage =
+\t\"PointPlot[f, {u, u0, u1, (du)}], (options)] \\
+\tproduces a 2D plot made out of points. \\
+\tOptions are passed to Show[]\";\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+PointPlot3D::usage =
+\t\"PointPlot3D[f, {x, x0, x1, (dx)}, \\
+\t{y, y0, y1, (dy)}, (options)] \\
+\tproduces a 3D plot made out of points. \\
+\tOptions are passed to Show[]\";\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+PointParamPlot3D::usage =
+\t\"PointParamPlot3D[{x, y, z}, {u, u0, u1, (du)}, \\
+\t{v, v0, v1, (dv)}, (options)] \\
+\tproduces a 3D parametric plot made out of points. \\ 
+\tOptions are passed to Show[]\";\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+SpaceCurve::usage =
+\t\"SpaceCurve[{x, y, z}, {u, u0, u1, (du)}, \\
+\t(options)] \\
+\tproduces a 3D space curve. \\
+\tOptions are passed to Show[]\";\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+PointSpaceCurve::usage =
+\t\"PointSpaceCurve[{x, y, z}, \\
+\t{u, u0, u1, (du)}, (options)] \\
+\tproduces a set of points in 3D. \\
+\tOptions are passed to Show[]\";\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["Begin the private part of this package:", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+Begin[\"`Private`\"];
+`plotpoints = PlotPoints /. Options[Plot3D]; \
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["Define PointPlot:", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell["\<\
+Attributes[PointPlot] = {HoldFirst};
+
+PointPlot[function_, range:{x_,___}, options___] := 
+\t\t\tListPlot[Table[{x, function}, range], options];\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+General::spell1: 
+   Possible spelling error: new symbol name \"range\"
+     is similar to existing symbol \"Range\".\
+\>", "Message",
+  ImageRegion->{{0, 1}, {0, 1}}]}, Open]],
+
+Cell["Define PointParamPlot3D:", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+Attributes[PointParamPlot3D] = {HoldFirst};
+
+PointParamPlot3D[fun:{_, _, _}, 
+\t{u_, u0_, u1_, du_:((u1-u0)/(plotpoints-1))}, 
+\t{v_, v0_, v1_, dv_:((v1-v0)/(plotpoints-1))}, opts___] :=
+\tShow[Graphics3D[Table[Point[N[fun]], 
+\t\t\t\t\t\t{u, u0, u1, du}, 
+\t\t\t\t\t\t{v, v0, v1, dv}]], opts];\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["Define PointPlot3D (in terms of PointParamPlot3D):", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell["\<\
+Attributes[PointPlot3D] = {HoldFirst};
+
+PointPlot3D[fun_, ulim:{u_, ___}, vlim:{v_, ___}, opts___] :=
+\tPointParamPlot3D[ {u, v, fun}, ulim, vlim, opts];\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+General::spell1: 
+   Possible spelling error: new symbol name \"vlim\"
+     is similar to existing symbol \"ulim\".\
+\>", "Message",
+  ImageRegion->{{0, 1}, {0, 1}}]}, Open]],
+
+Cell["Define SpaceCurve:", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+Attributes[SpaceCurve] = {HoldFirst};
+
+SpaceCurve[fun:{_, _, _}, 
+  {u_, u0_, u1_, du_:((u1-u0)/(plotpoints-1))}, opts___] :=
+\tShow[Graphics3D[Line[Table[N[fun], 
+\t                     {u,u0,u1,du}]]], opts];\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["Define PointSpaceCurve:", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[CellGroupData[{Cell["\<\
+Attributes[PointSpaceCurve] = {HoldFirst}
+
+PointSpaceCurve[fun:{_, _, _}, 
+  {u_, u0_, u1_, du_:((u1-u0)/(plotpoints-1))}, opts___] :=
+\tShow[Graphics3D[Table[Point[N[fun]], 
+\t                {u,u0,u1,du}]], opts];\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[OutputFormData["\<\
+{HoldFirst}\
+\>", "\<\
+{HoldFirst}\
+\>"], "Output",
+  ImageRegion->{{0, 1}, {0, 1}}]}, Open]],
+
+Cell["End this package:", "Text",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell["\<\
+End[];
+EndPackage[];\
+\>", "Input",
+  CellMargins->{{Inherited, 145}, {Inherited, Inherited}},
+  ImageRegion->{{0, 1}, {0, 1}}]}, Open]]}, Open]]
+},
+FrontEndVersion->"4.1 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 695}},
+WindowToolbars->{},
+CellGrouping->Manual,
+WindowSize->{499, 599},
+WindowMargins->{{128, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"ColorPalette"->{RGBColor, -1}},
+ShowCellLabel->True,
+ShowCellTags->False,
+RenderingOptions->{"ObjectDithering"->True,
+"RasterDithering"->False}
+]
+
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1727, 52, 78, 1, 70, "Title"],
+Cell[1808, 55, 77, 4, 70, "Subsubtitle"],
+Cell[1888, 61, 677, 21, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[2588, 84, 119, 2, 70, "Section"],
+Cell[2710, 88, 542, 17, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[3275, 107, 181, 6, 70, "Subsection"],
+Cell[3459, 115, 259, 7, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[3741, 124, 153, 4, 70, "Input"],
+Cell[3897, 130, 4260, 408, 70, 4058, 403, "GraphicsData", "PostScript", \
+"Graphics"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[8198, 540, 125, 2, 70, "Subsection"],
+Cell[8326, 544, 253, 5, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[8602, 551, 194, 5, 70, "Input"],
+Cell[8799, 558, 9834, 1269, 70, 9631, 1264, "GraphicsData", "PostScript", \
+"Graphics"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[18674, 1829, 130, 2, 70, "Subsection"],
+Cell[18807, 1833, 293, 6, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[19123, 1841, 256, 7, 70, "Input"],
+Cell[19382, 1850, 15779, 2097, 70, 15576, 2092, "GraphicsData", "PostScript", \
+"Graphics"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[35202, 3949, 124, 2, 70, "Subsection"],
+Cell[35329, 3953, 271, 5, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[35623, 3960, 198, 5, 70, "Input"],
+Cell[35824, 3967, 5931, 713, 70, 5728, 708, "GraphicsData", "PostScript", \
+"Graphics"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[41796, 4682, 129, 2, 70, "Subsection"],
+Cell[41928, 4686, 261, 5, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[42212, 4693, 204, 5, 70, "Input"],
+Cell[42419, 4700, 2965, 317, 70, 2762, 312, "GraphicsData", "PostScript", \
+"Graphics"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[45434, 5019, 149, 3, 70, "Section",
+  PageBreakAbove->True],
+Cell[45586, 5024, 183, 4, 70, "Text"],
+Cell[45772, 5030, 199, 5, 70, "Input"],
+Cell[45974, 5037, 127, 2, 70, "Text"],
+Cell[46104, 5041, 139, 2, 70, "Input"],
+Cell[46246, 5045, 159, 2, 70, "Text"],
+Cell[46408, 5049, 264, 7, 70, "Input"],
+Cell[46675, 5058, 291, 8, 70, "Input"],
+Cell[46969, 5068, 321, 8, 70, "Input"],
+Cell[47293, 5078, 266, 8, 70, "Input"],
+Cell[47562, 5088, 281, 8, 70, "Input"],
+Cell[47846, 5098, 147, 2, 70, "Text"],
+Cell[47996, 5102, 184, 5, 70, "Input"],
+Cell[48183, 5109, 125, 2, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[48331, 5113, 261, 7, 70, "Input"],
+Cell[48595, 5122, 177, 5, 70, "Message"]
+}, Open  ]],
+Cell[48784, 5129, 132, 2, 70, "Text"],
+Cell[48919, 5133, 411, 11, 70, "Input"],
+Cell[49333, 5146, 158, 2, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[49514, 5150, 270, 7, 70, "Input"],
+Cell[49787, 5159, 175, 5, 70, "Message"]
+}, Open  ]],
+Cell[49974, 5166, 126, 2, 70, "Text"],
+Cell[50103, 5170, 327, 9, 70, "Input"],
+Cell[50433, 5181, 131, 2, 70, "Text"],
+
+Cell[CellGroupData[{
+Cell[50587, 5185, 332, 9, 70, "Input"],
+Cell[50922, 5196, 109, 5, 70, "Output"]
+}, Open  ]],
+Cell[51043, 5203, 125, 2, 70, "Text"],
+Cell[51171, 5207, 137, 5, 70, "Input"]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
